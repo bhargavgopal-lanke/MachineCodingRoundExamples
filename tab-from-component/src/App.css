@@ -21,7 +21,11 @@
 }
 
 .active {
-    color: #fff;
-    background-color: brown;
-    font-weight: bold;
+  color: #fff;
+  background-color: brown;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 15px;
 }
