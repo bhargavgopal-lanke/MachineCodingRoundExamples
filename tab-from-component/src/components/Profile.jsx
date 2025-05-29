@@ -2,6 +2,15 @@ import React from "react";
 
 const Profile = ({ data, setData }) => {
   const { name, age, email } = data;
+
+  const handleDataChange = (e, item) => {
+    const value = e.target.value;
+    setData((prevState) => ({
+      ...prevState,
+      [item]: value,
+    }));
+  };
+
   return (
     <div>
       <div className="form-group">
@@ -10,7 +19,7 @@ const Profile = ({ data, setData }) => {
           type="text"
           value={name}
           name="name"
-          onChange={(e) => setData(e.target.value)}
+          onChange={(e) => handleDataChange(e, "name")}
         />
       </div>
       <div className="form-group">
@@ -19,7 +28,7 @@ const Profile = ({ data, setData }) => {
           type="text"
           value={age}
           name="age"
-          onChange={(e) => setData(e.target.value)}
+          onChange={(e) => handleDataChange(e, "age")}
         />
       </div>
       <div className="form-group">
@@ -28,7 +37,7 @@ const Profile = ({ data, setData }) => {
           type="text"
           value={email}
           name="email"
-          onChange={(e) => setData(e.target.value)}
+          onChange={(e) => handleDataChange(e, "email")}
         />
       </div>
     </div>
