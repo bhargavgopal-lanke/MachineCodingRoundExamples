@@ -1,6 +1,6 @@
 import React from "react";
 
-const Settings = ({ data, setData }) => {
+const Settings = ({ data, setData, errors }) => {
   const { theme } = data;
   const handleDataChange = (e) => {
     setData((prevState) => ({
@@ -32,6 +32,11 @@ const Settings = ({ data, setData }) => {
           Light
         </label>
       </div>
+        {errors.interests && (
+        <span style={{ color: "red", display: "block", fontWeight: "bold" }}>
+          {errors.theme}
+        </span>
+      )}
     </div>
   );
 };
