@@ -6,6 +6,12 @@ import { useState } from "react";
 
 function App() {
   const [tabIndex, setTabIndex] = useState(0);
+  // data should be managed from the parent component
+  const [data, setData] = useState({
+    name: "Bhargav",
+    age: 27,
+    email: "blanke@gmail.com",
+  });
 
   const activeTabs = [
     {
@@ -31,6 +37,7 @@ function App() {
           return (
             <>
               <button
+                key={i}
                 className={
                   i === tabIndex ? "active tab-buttons" : "tab-buttons"
                 }
@@ -42,7 +49,7 @@ function App() {
           );
         })}
         <div style={{ padding: "20px 0" }}>
-          <ActiveTabComponent />
+          <ActiveTabComponent data={data} setData={setData} />
         </div>
       </div>
     </div>
