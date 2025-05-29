@@ -42,3 +42,4 @@ const Settings = ({ data, setData, errors }) => {
 };
 
 export default Settings;
+

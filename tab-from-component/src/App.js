@@ -6,6 +6,7 @@ import { useState } from "react";
 
 function App() {
   const [tabIndex, setTabIndex] = useState(0);
+  
   // data should be managed from the parent component
   const [data, setData] = useState({
     name: "Bhargav",
@@ -14,6 +15,7 @@ function App() {
     interests: ["coding", "sports", "walking"],
     theme: "dark",
   });
+  
   const [fieldError, setFieldErros] = useState({});
 
   const activeTabs = [

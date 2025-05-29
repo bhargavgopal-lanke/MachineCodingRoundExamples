@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const Profile = ({ data, setData, errors }) => {
@@ -62,3 +63,4 @@ const Profile = ({ data, setData, errors }) => {
 };
 
 export default Profile;
+
