@@ -19,3 +19,9 @@
   background-color: #fff;
   cursor: pointer;
 }
+
+.active {
+    color: #fff;
+    background-color: brown;
+    font-weight: bold;
+}
