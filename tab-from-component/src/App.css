@@ -1,0 +1,21 @@
+.App {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.tabs-sec {
+  border: 1px solid;
+  padding: 20px;
+}
+
+.tab-buttons:nth-child(1),
+.tab-buttons:nth-child(2) {
+  border-right: 0;
+}
+
+.tab-buttons {
+  padding: 10px;
+  width: 100px;
+  background-color: #fff;
+  cursor: pointer;
+}
