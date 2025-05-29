@@ -30,11 +30,18 @@ function App() {
         {activeTabs.map((x, i) => {
           return (
             <>
-              <button className="tab-buttons" onClick={() => setTabIndex(i)}>{x.name}</button>
+              <button
+                className={
+                  i === tabIndex ? "active tab-buttons" : "tab-buttons"
+                }
+                onClick={() => setTabIndex(i)}
+              >
+                {x.name}
+              </button>
             </>
           );
         })}
-        <div style={{padding: '20px 0'}}>
+        <div style={{ padding: "20px 0" }}>
           <ActiveTabComponent />
         </div>
       </div>
