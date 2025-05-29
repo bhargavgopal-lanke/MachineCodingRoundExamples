@@ -11,6 +11,8 @@ function App() {
     name: "Bhargav",
     age: 27,
     email: "blanke@gmail.com",
+    interests: ["coding", "sports", "walking"],
+    theme: "dark",
   });
 
   const activeTabs = [
