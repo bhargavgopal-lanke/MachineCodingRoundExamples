@@ -26,15 +26,17 @@ function App() {
 
   return (
     <div className="App">
-      {activeTabs.map((x, i) => {
-        return (
-          <>
-            <button onClick={() => setTabIndex(i)}>{x.name}</button>
-          </>
-        );
-      })}
-      <div>
-        <ActiveTabComponent />
+      <div className="tabs-sec">
+        {activeTabs.map((x, i) => {
+          return (
+            <>
+              <button className="tab-buttons" onClick={() => setTabIndex(i)}>{x.name}</button>
+            </>
+          );
+        })}
+        <div style={{padding: '20px 0'}}>
+          <ActiveTabComponent />
+        </div>
       </div>
     </div>
   );
