@@ -21,16 +21,23 @@ function App() {
       component: Profile,
     },
     {
-      name: "settings",
-      component: Settings,
-    },
-    {
       name: "Interests",
       component: Interest,
+    },
+    {
+      name: "settings",
+      component: Settings,
     },
   ];
 
   const ActiveTabComponent = activeTabs[tabIndex].component;
+
+  const prevButton = () => {
+    setTabIndex((prevState) => prevState - 1);
+  };
+  const nextButton = () => {
+    setTabIndex((prevState) => prevState + 1);
+  };
 
   return (
     <div className="App">
@@ -53,6 +60,11 @@ function App() {
         <div style={{ padding: "20px 0" }}>
           <ActiveTabComponent data={data} setData={setData} />
         </div>
+        {tabIndex === activeTabs.length - 1 && <button>Submit</button>}
+        {tabIndex > 0 && <button onClick={prevButton}>Prev</button>}
+        {tabIndex < activeTabs.length - 1 && (
+          <button onClick={nextButton}>Next</button>
+        )}
       </div>
     </div>
   );
