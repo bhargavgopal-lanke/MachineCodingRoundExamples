@@ -5,10 +5,17 @@ import { fetchSearchList } from "./APis/searchApi";
 function App() {
   const [inputValue, setInputvalue] = useState("");
   const [searchApiData, setSearchApiData] = useState([]);
+  const [cachedResult, setCachedResult] = useState({});
+
   const getSearchData = async () => {
+    if (cachedResult[inputValue]) {
+      setSearchApiData(cachedResult[inputValue]);
+      return;
+    }
     try {
-      const data = await fetchSearchList();
+      const data = await fetchSearchList(inputValue);
       setSearchApiData(data);
+      setCachedResult((prev) => ({ ...prev, [inputValue]: data }));
     } catch (err) {
       console.log(err);
     }
@@ -17,8 +24,11 @@ function App() {
   console.log(searchApiData);
 
   useEffect(() => {
-    getSearchData();
-  }, []);
+    const timer = setTimeout(getSearchData, 300);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [inputValue]);
 
   return (
     <div className="App">
@@ -30,6 +40,10 @@ function App() {
           value={inputValue}
           onChange={(e) => setInputvalue(e.target.value)}
         />
+        {searchApiData &&
+          searchApiData.map((x) => {
+            return <div key={x.id}>{x.name}</div>;
+          })}
       </div>
     </div>
   );
