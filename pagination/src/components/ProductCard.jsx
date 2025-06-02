@@ -5,7 +5,16 @@ const ProductCard = ({ data }) => {
   return (
     <div>
       <div className="productlist-items">
-        <img src={thumbnail} alt="thumbnail" />
+        <img
+          src={thumbnail}
+          alt="thumbnail"
+          style={{
+            width: "100px",
+            height: "100px",
+            margin: "0 auto",
+            display: "block",
+          }}
+        />
         <h1>{title}</h1>
         <p>{description}</p>
         <span>Price: {price}</span> <br />
