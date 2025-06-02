@@ -18,11 +18,12 @@ function App() {
     } catch (err) {
       console.log(err.message);
     }
-  };
+
 
   useEffect(() => {
     fetchData();
   }, []);
+
 
   const totalProducts = products.length;
   const noOfPages = Math.ceil(totalProducts / PAGE_SIZE);
