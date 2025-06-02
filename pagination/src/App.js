@@ -56,9 +56,7 @@ function App() {
                 <div key={x}>
                   <button
                     className={
-                      currentPage === x
-                        ? "pagination-numbers active"
-                        : "pagination-numbers"
+                      "pagination-numbers" + x === currentPage && " active"
                     }
                     onClick={() => handleChange(x)}
                   >
