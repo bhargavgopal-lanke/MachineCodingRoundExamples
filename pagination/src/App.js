@@ -3,8 +3,7 @@ import "./App.css";
 import ProductCard from "./components/ProductCard";
 import Pagination from "./components/Pagination";
 import { fetchData } from "./Apis/Api";
-
-const PAGE_SIZE = 10;
+import { PAGE_SIZE } from "./utils/util";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -18,7 +17,7 @@ function App() {
       console.log(err.message);
     }
   };
-  
+
   useEffect(() => {
     getData();
   }, []);
