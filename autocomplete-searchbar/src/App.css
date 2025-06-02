@@ -1,0 +1,10 @@
+.App {
+  width: 600px;
+  margin: 0 auto;
+}
+
+input.form-control {
+  width: 80%;
+  padding: 10px 0;
+  border-radius: 10px;
+}
