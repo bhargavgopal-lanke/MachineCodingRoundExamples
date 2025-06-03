@@ -8,11 +8,7 @@ function App() {
       <h1>Progress Bar</h1>
 
       {bars.map((x) => {
-        return (
-          <div className="mb-15" key={x}>
-            <Progressbar progress={x} />
-          </div>
-        );
+        return <Progressbar key={x} progress={x} />;
       })}
     </div>
   );
