@@ -1,8 +1,10 @@
+
 import React, { useEffect, useRef, useState } from "react";
 import { OTP_DIGIT_COUNT } from "../utils/util";
 
 const OTP = () => {
   const refArr = useRef([]);
+
   const [inputArray, setInputArray] = useState(
     new Array(OTP_DIGIT_COUNT).fill("")
   );
@@ -11,12 +13,14 @@ const OTP = () => {
     refArr.current[0]?.focus();
   }, []);
 
+
   const handleChange = (e, i) => {
     const value = e.target.value;
     // returning the function here without any futher execution if entered key is not an number
     if (isNaN(value)) {
       return;
     }
+
     const newValue = value.trim();
     const newArray = [...inputArray]; // copied the array into a new variable
     newArray[i] = newValue.slice(-1); // adding the value for that index position inside the array
@@ -31,6 +35,7 @@ const OTP = () => {
       refArr.current[i - 1]?.focus();
     }
   };
+
 
   return (
     <div>
