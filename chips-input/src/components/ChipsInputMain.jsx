@@ -19,7 +19,7 @@ const ChipsInputMain = () => {
   const handleKeyDown = (e) => {
     const enterBtn = e.key;
     const value = e.target.value;
-    if (value.trim() && enterBtn === "Enter") {
+    if (value.trim() !== "" && enterBtn === "Enter") {
       setChipsArray((prev) => [...prev, chipsText]);
       setChipsText("");
     }
