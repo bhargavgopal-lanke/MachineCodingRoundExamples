@@ -19,6 +19,9 @@ const ChipsInputMain = () => {
 
   const hanldeClose = (i) => {
     const copyChips = [...chipsArray];
+    // easiest way to delete items in array
+    // used to splice method to delete one item from that index position
+    // copyChips.splice(i, 1);
     const newArray = copyChips.filter((_, index) => index !== i);
     setChipsArray(newArray);
   };
