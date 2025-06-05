@@ -25,8 +25,9 @@ input {
 }
 
 .close {
-  font-size: 20px;
   font-weight: bold;
   cursor: pointer;
   color: #111;
+  background-color: transparent;
+  border: none;
 }
