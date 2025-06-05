@@ -7,9 +7,10 @@ const Accordian = ({ items }) => {
     setIndex(openIndex === index ? null : index);
   };
 
+
   return (
     <div>
-      {items.length === 0 ? (
+      {(!items || items.length === 0 )? (
         <h1>No items found</h1>
       ) : (
         items.map((item, i) => {
