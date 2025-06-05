@@ -18,7 +18,8 @@ const ChipsInputMain = () => {
   };
 
   const hanldeClose = (i) => {
-    const newArray = chipsArray.filter((_, index) => index !== i);
+    const copyChips = [...chipsArray];
+    const newArray = copyChips.filter((_, index) => index !== i);
     setChipsArray(newArray);
   };
 
