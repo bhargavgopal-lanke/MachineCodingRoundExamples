@@ -4,12 +4,9 @@ const Accordian = ({ items }) => {
   const [openIndex, setIndex] = useState(null);
 
   const hanldeClick = (index) => {
-    console.log("i", index);
-    console.log("index", openIndex);
     setIndex(openIndex === index ? null : index);
   };
 
-  console.log("outer", openIndex);
 
   return (
     <div>
