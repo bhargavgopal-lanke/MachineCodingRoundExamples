@@ -1,1 +1,8 @@
 
+.delete {
+    text-decoration: line-through;
+}
+
+.todo-app button, ul li button  {
+    margin-left: 10px;
+}
