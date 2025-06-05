@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const ChipsInputMain = () => {
   const [chipsText, setChipsText] = useState("");
   const [chipsArray, setChipsArray] = useState([]);
+
+  const inputRef = useRef();
+
+  // once the page loads I'm focusing on the input field.
+  useEffect(() => {
+    inputRef.current.focus();
+  }, [])
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -32,13 +39,17 @@ const ChipsInputMain = () => {
         type="text"
         value={chipsText}
         onChange={handleChange}
+        ref={inputRef}
         onKeyDown={(e) => handleKeyDown(e)}
       />
       <div className="chips-output">
         {chipsArray.map((chips, i) => {
           return (
             <span className="chips" key={i}>
-              {chips} <span onClick={() => hanldeClose(i)} className="close">x</span>
+              {chips}
+              <button onClick={() => hanldeClose(i)} className="close">
+                X
+              </button>
             </span>
           );
         })}
