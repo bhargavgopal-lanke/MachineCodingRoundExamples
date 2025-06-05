@@ -1,15 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Accordian = ({ items }) => {
+  const [openIndex, setIndex] = useState(null);
+
+  const hanldeClick = (index) => {
+    console.log("i", index);
+    console.log("index", openIndex);
+    setIndex(openIndex === index ? null : index);
+  };
+
+  console.log("outer", openIndex);
+
   return (
     <div>
-      {items.map((item) => {
+      {items.map((item, i) => {
         return (
-          <div className="accordian">
-            <h1 className="parent">{item.title}</h1>
-            <div className="child">
-              <p>{item.content}</p>
-            </div>
+          <div className="accordian" key={i}>
+            <h1 className="parent" onClick={() => hanldeClick(i)}>
+              {item.title}
+            </h1>
+            {openIndex === i && (
+              <div className={`child`}>
+                <p>{item.content}</p>
+              </div>
+            )}
           </div>
         );
       })}
