@@ -13,8 +13,16 @@
   margin: 0;
   padding: 20px 0;
   cursor: pointer;
+  background-color: gray;
+  color: #fff;
 }
 
 .accordian .child {
   padding: 20px;
+}
+
+.icon {
+  display: inline-block;
+  float: right;
+  margin: 0 30px 0 0;
 }
