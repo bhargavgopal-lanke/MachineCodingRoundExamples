@@ -1,0 +1,28 @@
+.App {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.accordian {
+  border: 2px solid;
+}
+
+.accordian .parent {
+  text-align: center;
+  border-bottom: 2px solid;
+  margin: 0;
+  padding: 20px 0;
+  cursor: pointer;
+  background-color: gray;
+  color: #fff;
+}
+
+.accordian .child {
+  padding: 20px;
+}
+
+.icon {
+  display: inline-block;
+  float: right;
+  margin: 0 30px 0 0;
+}
