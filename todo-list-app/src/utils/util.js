@@ -10,7 +10,11 @@ export const handleSubmit = (id, inputText, setId, setTodo, setInputText) => {
     name: inputText,
     completed: false,
   };
-  setTodo((prev) => [...prev, item]);
+  
+  if (inputText.trim() !== "") {
+    setTodo((prev) => [...prev, item]);
+  }
+
   setInputText("");
 };
 
