@@ -9,7 +9,7 @@ const ChipsInputMain = () => {
   // once the page loads I'm focusing on the input field.
   useEffect(() => {
     inputRef.current.focus();
-  }, [])
+  }, []);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -39,6 +39,7 @@ const ChipsInputMain = () => {
         type="text"
         value={chipsText}
         onChange={handleChange}
+        placeholder="please enter text to add chips"
         ref={inputRef}
         onKeyDown={(e) => handleKeyDown(e)}
       />
