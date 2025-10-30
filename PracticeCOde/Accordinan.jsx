@@ -19,9 +19,8 @@ const Accordian = () => {
       content: "This is tab 3 data",
     },
   ];
-  console.log("current", current);
+
   const handleClick = (i) => {
-    console.log("click", i);
     setCurrent(i);
   };
 
